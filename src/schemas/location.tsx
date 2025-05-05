@@ -95,9 +95,14 @@ export const Location = ({ onCreate, onUpdate }: ISchema) => {
             <div className="flex-1 lg:w-2/3">
                 <label className="label mb-2">Pick Location</label>
                 <MapContainer
-                    zoom={2}
+                    dragging
+                    zoomControl
+                    scrollWheelZoom
                     height={200}
                     onClick={handleMapClick}
+                    tile="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    minZoom={1}
+                    maxZoom={18}
                     coordinates={[currentConfig.latitude, currentConfig.longitude]}
                 />
             </div>
