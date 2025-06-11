@@ -56,7 +56,8 @@ export const MapContainer = ({
     const handleClick = useCallback(
         (e: LeafletMouseEvent) => {
             const { lat, lng } = e.latlng;
-            onClick?.(lat, lng);
+            const normalizedLng = ((((lng + 180) % 360) + 360) % 360) - 180;
+            onClick?.(lat, normalizedLng);
         },
         [onClick]
     );
