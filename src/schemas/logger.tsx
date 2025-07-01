@@ -42,7 +42,7 @@ export const Logger = ({ onCreate, onUpdate }: ISchema) => {
     return (
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box space-y-2 border p-4">
             <div className="flex flex-col space-y-2">
-                <label className="label">Debug Mode</label>
+                <label className="label">Log Level</label>
                 <select
                     name="level"
                     className="select w-full"
