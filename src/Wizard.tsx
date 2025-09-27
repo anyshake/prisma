@@ -41,7 +41,11 @@ export const Wizard = () => {
 
             <div className="animate-fade-down animate-delay-500 p-4 md:w-1/2">
                 <div className="sticky top-4 overflow-y-auto rounded-lg md:h-[calc(100vh-2rem)]">
-                    <CodeBlock language={schemaConfig.language} fileName={schemaConfig.fileName}>
+                    <CodeBlock
+                        language={schemaConfig.language}
+                        fileName={schemaConfig.fileName}
+                        badge={schemaConfig.compatibility}
+                    >
                         {JSON.stringify(currentConfig, null, 4)}
                     </CodeBlock>
                 </div>

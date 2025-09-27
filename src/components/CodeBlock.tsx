@@ -11,9 +11,10 @@ interface ICodeBlock {
     readonly language?: string;
     readonly fileName?: string;
     readonly children: string;
+    readonly badge?: string;
 }
 
-export const CodeBlock = ({ fileName, language, children }: ICodeBlock) => {
+export const CodeBlock = ({ fileName, language, children, badge }: ICodeBlock) => {
     const [isCopied, setIsCopied] = useState(false);
 
     const handleCopy = useCallback(async (text: string) => {
@@ -36,7 +37,10 @@ export const CodeBlock = ({ fileName, language, children }: ICodeBlock) => {
     return (
         <div className="rounded-lg bg-gray-700 p-2">
             <div className="flex items-center justify-between px-3">
-                <span className="font-mono text-sm text-gray-300">{fileName ?? 'Code'}</span>
+                <div className="flex items-center justify-center space-x-2">
+                    <span className="font-mono text-sm text-gray-300">{fileName ?? 'Code'}</span>
+                    {badge?.length && <div className="badge badge-sm badge-accent">{badge}</div>}
+                </div>
                 <div className="flex space-x-3">
                     <div
                         className="cursor-pointer opacity-60 transition-all hover:opacity-100"

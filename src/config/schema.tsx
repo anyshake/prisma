@@ -23,6 +23,7 @@ export interface ISchema {
 interface ISchemaConfig {
     readonly fileName: string;
     readonly language: string;
+    readonly compatibility: string;
     readonly schema: Record<
         string,
         {
@@ -37,6 +38,7 @@ interface ISchemaConfig {
 export const schemaConfig: ISchemaConfig = {
     fileName: 'config.json',
     language: 'json',
+    compatibility: 'v4.2.0+',
     schema: {
         location: {
             icon: mdiMapMarker,
