@@ -39,6 +39,10 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
     ]);
 
     const handleUpdateNtpAddr = (index: number, value: string) => {
+        if (ntpAddrs.filter((item) => item.address.length > 0).length === 1 && value.length === 0) {
+            sendUserAlert('At least one NTP server is required', true);
+            return;
+        }
         setNtpAddrs((prev) =>
             prev.map((item, i) => (i === index ? { ...item, address: value } : item))
         );
@@ -64,7 +68,7 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
         if (ntpAddrs.length > 1) {
             setNtpAddrs(ntpAddrs.filter((_, i) => i !== index));
         } else {
-            sendUserAlert('At least one address is required', true);
+            sendUserAlert('At least one NTP server is required', true);
         }
     };
 
