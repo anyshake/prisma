@@ -26,7 +26,9 @@ export const Hardware = ({ onCreate, onUpdate }: ISchema) => {
     const [transportType, setTransportType] = useState('serial');
     const [tcpHostname, setTcpHostname] = useState('10.0.0.100');
     const [tcpPort, setTcpPort] = useState('12345');
-    const [serialPort, setSerialPort] = useState('COM3');
+    const [serialPort, setSerialPort] = useState(
+        navigator.userAgent.includes('Windows') ? 'COM3' : '/dev/ttyUSB0'
+    );
     const [serialBaudrate, setSerialBaudrate] = useState('57600');
 
     const updateEndpoint = useCallback(() => {
