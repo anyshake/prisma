@@ -48,7 +48,7 @@ const defaultNtpGroup = [
             { address: 'ntp3.uni-ulm.de', port: '123' },
             { address: 'ntp.ntu.edu.tw', port: '123' },
             { address: 'ntp2.ntu.edu.tw', port: '123' },
-            { address: 'time.upd.edu.ph:123', port: '123' }
+            { address: 'time.upd.edu.ph', port: '123' }
         ]
     },
     {
