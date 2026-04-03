@@ -100,7 +100,10 @@ export const Location = ({ onCreate, onUpdate }: ISchema) => {
                     scrollWheelZoom
                     height={200}
                     onClick={handleMapClick}
-                    tile="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    tileSrc={{
+                        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                        attribution: '&copy; OpenStreetMap contributors'
+                    }}
                     minZoom={1}
                     maxZoom={18}
                     coordinates={[currentConfig.latitude, currentConfig.longitude]}

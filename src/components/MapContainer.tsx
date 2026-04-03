@@ -10,7 +10,10 @@ export interface IMapContainer {
     readonly zoom?: number;
     readonly minZoom: number;
     readonly maxZoom: number;
-    readonly tile: string;
+    readonly tileSrc: {
+        readonly url: string;
+        readonly attribution: string;
+    };
     readonly coordinates: number[];
     readonly scrollWheelZoom?: boolean;
     readonly zoomControl?: boolean;
@@ -24,7 +27,7 @@ export const MapContainer = ({
     minZoom,
     maxZoom,
     zoom,
-    tile,
+    tileSrc,
     borderRadius = '8px',
     coordinates,
     scrollWheelZoom,
@@ -78,7 +81,6 @@ export const MapContainer = ({
             zoom={zoom ?? 6}
             scrollWheelZoom={scrollWheelZoom}
             zoomControl={zoomControl}
-            attributionControl={false}
             doubleClickZoom={false}
             dragging={dragging}
             maxZoom={maxZoom}
@@ -86,7 +88,7 @@ export const MapContainer = ({
             center={[latitude, longitude]}
             style={{ cursor: 'default', borderRadius, height }}
         >
-            <TileLayer url={tile} />
+            <TileLayer url={tileSrc.url} attribution={tileSrc.attribution} />
             <Marker position={[latitude, longitude]} icon={icon} />
         </MapBox>
     );
