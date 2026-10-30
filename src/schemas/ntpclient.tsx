@@ -14,6 +14,7 @@ const defaultConfig = {
 const defaultNtpGroup = [
     {
         tag: 'university-provider',
+        notice: '',
         servers: [
             { address: 'time.mit.edu', port: '123' },
             { address: 'ntp1.lsu.edu', port: '123' },
@@ -32,7 +33,6 @@ const defaultNtpGroup = [
             { address: 'gpsntp.miz.nao.ac.jp', port: '123' },
             { address: 'ntp.nc.u-tokyo.ac.jp', port: '123' },
             { address: 'clock.cit.nihon-u.ac.jp', port: '123' },
-            { address: 'ntp.osakafu-u.ac.jp', port: '123' },
             { address: 'ntp.kuins.kyoto-u.ac.jp', port: '123' },
             { address: 'ntp.tut.ac.jp', port: '123' },
             { address: 'ntp.netlab.is.tsukuba.ac.jp', port: '123' },
@@ -53,94 +53,57 @@ const defaultNtpGroup = [
     },
     {
         tag: 'authority-provider',
+        notice: '',
         servers: [
-            { address: 'ntp-a2.nict.go.jp', port: '123' },
-            { address: 'ntp-a3.nict.go.jp', port: '123' },
-            { address: 'ntp-b2.nict.go.jp', port: '123' },
-            { address: 'ntp-b3.nict.go.jp', port: '123' },
-            { address: 'ntp-k1.nict.jp', port: '123' },
+            { address: 'ntp.nict.jp', port: '123' },
+            { address: 'time.nist.gov', port: '123' },
+            { address: 'time.stdtime.gov.tw', port: '123' },
             { address: 'ptbtime1.ptb.de', port: '123' },
             { address: 'ptbtime2.ptb.de', port: '123' },
             { address: 'ptbtime3.ptb.de', port: '123' },
             { address: 'stdtime.gov.hk', port: '123' },
             { address: 'time1.chu.nrc.ca', port: '123' },
             { address: 'time2.chu.nrc.ca', port: '123' },
-            { address: 'ntp.metas.ch', port: '123' },
             { address: 'hora.roa.es', port: '123' },
             { address: 'minuto.roa.es', port: '123' }
         ]
     },
     {
-        tag: 'apple-inc',
+        tag: 'commercial-provider',
+        notice:
+            'Cloudflare and Microsoft do not use leap smear. ' +
+            'The leap-second policy for Apple is unconfirmed.',
         servers: [
-            { address: 'krseo1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'dkblp1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'dkblp1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'frcch1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'frcch1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'krsel6-ntp-001.aaplimg.com', port: '123' },
-            { address: 'krsel6-ntp-002.aaplimg.com', port: '123' },
-            { address: 'nlams2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'nlams2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'twtpe2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'twtpe2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'usmes1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'ntp.euro.apple.com', port: '123' },
-            { address: 'uklon5-ntp-001.aaplimg.com', port: '123' },
-            { address: 'zaisd1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'zaisd1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'jptyo5-ntp-001.aaplimg.com', port: '123' },
-            { address: 'jptyo5-ntp-004.aaplimg.com', port: '123' },
-            { address: 'defra1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'sesto4-ntp-002.aaplimg.com', port: '123' },
-            { address: 'sesto4-ntp-001.aaplimg.com', port: '123' },
-            { address: 'defra1-ntp-004.aaplimg.com', port: '123' },
-            { address: 'usatl4-ntp-001.aaplimg.com', port: '123' },
-            { address: 'usatl4-ntp-002.aaplimg.com', port: '123' },
-            { address: 'uschi5-ntp-002.aaplimg.com', port: '123' },
-            { address: 'uschi5-ntp-003.aaplimg.com', port: '123' },
-            { address: 'usscz2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'ussjc2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'usscz2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'ussjc2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'jptyo5-ntp-003.aaplimg.com', port: '123' },
-            { address: 'jptyo5-ntp-002.aaplimg.com', port: '123' },
-            { address: 'hkhkg1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'hkhkg1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'hkhkg1-ntp-003.aaplimg.com', port: '123' },
-            { address: 'defra1-ntp-003.aaplimg.com', port: '123' },
-            { address: 'defra1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'uklon5-ntp-004.aaplimg.com', port: '123' },
-            { address: 'usmes1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'usmia1-ntp-001.aaplimg.com', port: '123' },
-            { address: 'usmia1-ntp-002.aaplimg.com', port: '123' },
-            { address: 'usnyc3-ntp-003.aaplimg.com', port: '123' },
-            { address: 'usnyc3-ntp-001.aaplimg.com', port: '123' },
-            { address: 'usnyc3-ntp-004.aaplimg.com', port: '123' },
-            { address: 'usnyc3-ntp-002.aaplimg.com', port: '123' },
-            { address: 'brsao4-ntp-001.aaplimg.com', port: '123' },
-            { address: 'brsao4-ntp-002.aaplimg.com', port: '123' },
-            { address: 'usqas2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'usqas2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'uschi5-ntp-001.aaplimg.com', port: '123' },
-            { address: 'ussea4-ntp-001.aaplimg.com', port: '123' },
-            { address: 'ussea4-ntp-002.aaplimg.com', port: '123' },
-            { address: 'uklon5-ntp-003.aaplimg.com', port: '123' },
-            { address: 'uklon5-ntp-002.aaplimg.com', port: '123' },
-            { address: 'ausyd2-ntp-001.aaplimg.com', port: '123' },
-            { address: 'ausyd2-ntp-002.aaplimg.com', port: '123' },
-            { address: 'sgsin3-ntp-001.aaplimg.com', port: '123' },
-            { address: 'sgsin3-ntp-002.aaplimg.com', port: '123' },
-            { address: 'hkhkg1-ntp-004.aaplimg.com', port: '123' }
+            { address: 'time.apple.com', port: '123' },
+            { address: 'time.cloudflare.com', port: '123' },
+            { address: 'time.windows.com', port: '123' }
         ]
     },
     {
-        tag: 'google-inc',
+        tag: 'google-inc (leap smear)',
+        notice:
+            'Google Public NTP uses a 24-hour linear leap smear and may differ from UTC ' +
+            'by up to 0.5 seconds. Do not mix it with non-smearing NTP servers or servers ' +
+            'using a different smear policy, including Facebook Public NTP.',
         servers: [
             { address: 'time1.google.com', port: '123' },
             { address: 'time2.google.com', port: '123' },
             { address: 'time3.google.com', port: '123' },
             { address: 'time4.google.com', port: '123' }
+        ]
+    },
+    {
+        tag: 'facebook-inc (leap smear)',
+        notice:
+            'Facebook Public NTP uses leap smear with a different schedule from Google. ' +
+            'Do not mix it with non-smearing NTP servers or servers using a different ' +
+            'smear policy, including Google Public NTP.',
+        servers: [
+            { address: 'time1.facebook.com', port: '123' },
+            { address: 'time2.facebook.com', port: '123' },
+            { address: 'time3.facebook.com', port: '123' },
+            { address: 'time4.facebook.com', port: '123' },
+            { address: 'time5.facebook.com', port: '123' }
         ]
     }
 ];
@@ -156,6 +119,7 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
     }, [currentConfig, onCreate]);
 
     const [ntpAddrs, setNtpAddrs] = useState([...defaultNtpGroup[0].servers]);
+    const [ntpNotice, setNtpNotice] = useState(defaultNtpGroup[0].notice);
 
     const handleUpdateNtpAddr = (index: number, value: string) => {
         if (ntpAddrs.filter((item) => item.address.length > 0).length === 1 && value.length === 0) {
@@ -233,11 +197,12 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box space-y-2 border p-4">
             <div className="flex flex-col space-y-2">
                 <div className="flex flex-wrap items-center gap-2">
-                    {defaultNtpGroup.map(({ servers, tag }, index) => (
+                    {defaultNtpGroup.map(({ servers, tag, notice }, index) => (
                         <button
                             className="btn btn-sm text-gray-700"
                             onClick={() => {
                                 setNtpAddrs(servers);
+                                setNtpNotice(notice);
                             }}
                             key={index}
                         >
@@ -245,6 +210,7 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
                         </button>
                     ))}
                 </div>
+                {ntpNotice.length > 0 && <p className="text-warning text-sm">{ntpNotice}</p>}
                 {ntpAddrs.map(({ address, port }, index) => (
                     <div className="flex items-center justify-center space-x-2" key={index}>
                         <div className="w-1/2 space-y-2 lg:w-4/6">
@@ -253,7 +219,7 @@ export const NtpClient = ({ onCreate, onUpdate }: ISchema) => {
                                 type="text"
                                 className="input w-full"
                                 value={address}
-                                placeholder='e.g. "ntp-a2.nict.go.jp"'
+                                placeholder='e.g. "ntp.nict.jp"'
                                 onChange={({ target }) => handleUpdateNtpAddr(index, target.value)}
                             />
                         </div>
